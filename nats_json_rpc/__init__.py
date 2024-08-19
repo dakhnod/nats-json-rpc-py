@@ -106,4 +106,5 @@ class NatsJsonRPC():
                 
                 await self._nats.publish(reply, self._codecs_encode(result))
 
-            await self._nats.subscribe(f'{self._prefix}{rpc_func.__name__}', cb=functools.partial(func, rpc_func))
+            topic = f'{self._prefix}{rpc_func.__name__}'
+            await self._nats.subscribe(topic, cb=functools.partial(func, rpc_func), queue=topic)
