@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"  # If not defined, then legacy behavior can happen.
+
+
+[project]
+name = "nats-json-rpc"
+
+version = "0.0.1"
+
+description = "RPC library using NATS"
+
+readme = "README.md"
+
+requires-python = ">=3.8"
+
+keywords = ["nats", "rpc", "broker"]
+
+authors = [
+  {name = "Daniel Dakhno", email = "dakhnod@gmail.com" }
+]
+
+maintainers = [
+  {name = "Daniel Dakhno", email = "dakhnod@gmail.com" }
+]
+
+dependencies = [
+  "bson"
+]
+
+[tool.setuptools]
+packages = ["nats_json_rpc"]
+
+[project.urls]
+"Homepage" = "https://github.com/pypa/sampleproject"
+"Bug Reports" = "https://github.com/pypa/sampleproject/issues"
+"Funding" = "https://donate.pypi.org"
+"Say Thanks!" = "http://saythanks.io/to/example"
+"Source" = "https://github.com/pypa/sampleproject/"
