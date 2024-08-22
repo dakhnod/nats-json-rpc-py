@@ -67,7 +67,7 @@ class NatsJsonRPC():
         return value
     
     async def rpc_call(self, subject, **args):
-        result = await self._nats.request(subject, self._codecs_encode(args))
+        result = await self._nats.request(subject, self._codecs_encode(args), timeout=20)
 
         result = self._codecs_decode(result.data)
         try:
